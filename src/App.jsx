@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ForgottenPassword from './pages/ForgottenPassword';
 import ProductDetails from './pages/ProductDetails';
 import Navbar from './component/Navbar';
 import Upbar from './component/Upbar';
@@ -13,7 +14,7 @@ import Cart from './pages/Productcart/Cart';
 import Paymentpage from './paymentgateway/Paymentpage';
 import Faqs from './productreviews/Faqs';
 import Newarrivals from './category/Newarrivals';
-
+import Otp from './pages/Otp';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
@@ -33,11 +34,13 @@ function App() {
         <Route path='/' element={<ProductDetails allProducts={allProducts} setAllProducts={setAllProducts} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path="/forgotten" element={<ForgottenPassword/>}/>
         <Route path='/faq' element={<Faqs />} />
         <Route path='/arrival' element={<Newarrivals />} />
         <Route path="/product/:productId" element={<ProductList />} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/gateway" element={<Paymentpage/>} />
+        <Route path='/otp' element={<Otp />} />
       </Routes>
       <ToastContainer/>
     </div>

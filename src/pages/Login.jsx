@@ -86,6 +86,7 @@ const Login = () => {
                                   <span onClick={togglePasswordVisibility} className="absolute top-[22px] right-5 cursor-pointer">
                                       {!passwordVisible ? <FaRegEye /> : <FaEyeSlash />}
                                   </span>
+                                  <div className="mt-3">Forgetten password? <button className="btn btn-block rounded-md w-[100px] bg-pink-300"><Link to='/forgotten'>get it back</Link> </button></div>
                               </div>
           <button type='submit' className="btn btn-block w-full bg-pink-500 text-white py-3 rounded-md hover:bg-gray-200 hover:text-pink-500">
             {loading ? <img src={gif} alt="" className='w-[25px] text-center mx-auto' /> : ('Log in')}
