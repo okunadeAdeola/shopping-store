@@ -9,7 +9,7 @@ const OtpVerification = () => {
   const [otp, setOtp] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const email = localStorage.getItem("resetEmail") // Get stored email
+  const email = localStorage.getItem("user") // Get stored email
 
   const handleVerifyOtp = async (e) => {
     e.preventDefault()
@@ -23,8 +23,7 @@ const OtpVerification = () => {
       const response = await axiosInstance.post("/verifyOtp", { email, otp })
       toast.success(response?.data?.message)
       localStorage.setItem("isOtpVerified", "true")
-      // Uncomment the line below to navigate after verification
-      // navigate('/reset-password');
+      navigate("/reset-password")
     } catch (error) {
       toast.error(error?.response?.data?.message || "Invalid OTP")
     } finally {

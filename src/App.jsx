@@ -15,6 +15,7 @@ import Paymentpage from './paymentgateway/Paymentpage';
 import Faqs from './productreviews/Faqs';
 import Newarrivals from './category/Newarrivals';
 import Otp from './pages/Otp';
+import ResetPassword from './pages/ResetPassword';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
@@ -41,6 +42,7 @@ function App() {
         <Route path="/cart" element={<Cart/>} />
         <Route path="/gateway" element={<Paymentpage/>} />
         <Route path='/otp' element={<Otp />} />
+        <Route path='/reset-password' element={<ResetPassword/>}/>
       </Routes>
       <ToastContainer/>
     </div>

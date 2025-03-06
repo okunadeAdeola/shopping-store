@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Aos from 'aos';
+// import 'aos/dist/aos.css'
 const Homepage = () => {
     const [count, setCount] = useState(1);
     const [quality, setQuality] = useState(1);
     const [customer, setCustomer] = useState(1);
 
-
+    // useEffect(() => {
+    //     Aos.init({
+    //       duration:3000,
+    //       once:false,
+    //       offset: 100,
+    //       easing: 'ease-in-out',
+    //       infinite: true,
+    //     //   Aos.refresh();
+    //     })
+    //   }, [count, quality, customer])
     const brandTarget = 200;
     const qualityTarget = 2000;
     const customerTarget = 3000;
@@ -38,7 +48,7 @@ const Homepage = () => {
     }, [count, quality, customer]);
 
     return (
-        <div className='grid lg:grid-cols-2 bg-gray-100 p-10'>
+        <div className='grid lg:grid-cols-2 bg-gray-100 p-10' >
             <div>
                 <p className='lg:text-7xl md:text-6xl text-4xl font-bold'>Express Your Style</p>
                 <p className='lg:text-7xl font-bold md:text-6xl text-4xl'>with the Perfect</p>
@@ -68,7 +78,7 @@ const Homepage = () => {
                     alt="A representative image"
                     className='rounded-lg shadow-lg w-full max-w-sm'
                 /> */}
-                <img className='rounded-lg shadow-lg opacity-70 w-full max-w-sm' src="https://plus.unsplash.com/premium_photo-1682095757120-c9abb908ed60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vZGVsfGVufDB8fDB8fHww" alt="" />
+                <img className='rounded-lg shadow-lg opacity-70 w-full max-w-sm'src="https://plus.unsplash.com/premium_photo-1682095757120-c9abb908ed60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vZGVsfGVufDB8fDB8fHww" alt="" />
             </div>
 
         </div>
