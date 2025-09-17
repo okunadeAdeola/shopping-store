@@ -42,7 +42,7 @@ const Delivery = () => {
   };
 
   return (
-    <div className='bg-white shadow rounded-lg py-5 md:ms-[15%] lg:ms-0 w-[130%] ms-5  md:w-[100%]'>
+    <div className='bg-amber-50 shadow rounded-lg py-5 md:ms-[15%] lg:ms-0 w-[130%] ms-5  md:w-[100%]'>
       <form onSubmit={handleSubmit(onSubmit)} className="lg:w-[100%] w-[100%] md:w-[100%] py-5 lg:mt-8 mt-0 px-2">
         <h1 className='text-center font-bold text-2xl'>PickupForm Information</h1>
         <div className='flex lg:gap-10 gap-3 border-gray-500 lg:border-b md:border-b lg:p-3 p-4'>

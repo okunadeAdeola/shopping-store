@@ -7,7 +7,6 @@ import { FaSquareCheck } from "react-icons/fa6";
 import { handleNextStep } from '../Redux/counterSlice';
 import Paymentgateway from './Paymentgateway';
 import Thank from './Thank';
-import Navbar from '../component/Navbar';
 
 const Paymentpage = () => {
     const storeIndex = useSelector((state => state.counterReducer.address.currentStep))
@@ -42,7 +41,6 @@ const Paymentpage = () => {
 
     return (
       <section className='bg-amber-50 w-full p-5'>
-      <Navbar />  
         <div className='lg:ms-[22%] justify-between lg:me-[15%] flex lg:flex-row flex-col gap-8'>
             <div className='stepContainer w-[70%]'>
                 {storeIndex === 0 && <Address />}
@@ -50,7 +48,7 @@ const Paymentpage = () => {
                 {storeIndex === 2 && <Paymentgateway />}
                 {storeIndex === 3 && <Thank />}
             </div>
-            <div className={storeIndex > 2 ? 'hidden' : 'lg:w-[30%] rounded-lg md:w-[53%] w-[84%] md:ms-[21%] lg:ms-0 ms-7 border-2 lg:order-last bg-white -order-last mt-8 h-[30%] shadow'}>
+            <div className={storeIndex > 2 ? 'hidden' : 'lg:w-[30%] rounded-lg md:w-[53%] w-[84%] md:ms-[21%] lg:ms-0 ms-7 border-2 lg:order-last bg-amber-50 -order-last mt-8 h-[30%] shadow'}>
                 {
                     list.map((items, index) => (
                         <ul key={index} className='flex justify-between border-b border-gray-500 p-5'>
