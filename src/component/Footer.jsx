@@ -7,7 +7,7 @@ import paypal from '../assets/image/paypal.png';
 import visa from '../assets/image/visa.png';
 import gpay from '../assets/image/gpay.png';
 import master from '../assets/image/master.png';
-
+import logoImage from '../assets/image/logo1.png'
 
 
 const Footer = () => {
@@ -17,8 +17,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center mt-[-2px]">
             <Link to="/">
-              <span className="text-2xl hover:text-orange-600 cursor-pointer font-bold text-white mr-2">shopping</span>
-              <span className="text-xl hover:text-orange-600 cursor-pointer font-semibold text-orange-600">.co</span>
+              <img src={logoImage} alt="Logo"  style={{width: "60px", height: "60px"}}/>
             </Link>
           </div>
           <p className='my-3 hover:text-orange-600 cursor-pointer'>We offer stylish clothes that you’ll love to wear, tailored for both women and men."</p>
@@ -70,8 +69,7 @@ const Footer = () => {
   {/* Logo Section */}
   <div className="flex items-center gap-5">
     <Link to="/">
-      <span className="text-2xl font-bold text-white mr-2">shopping</span>
-      <span className="text-xl font-semibold text-orange-600">.co</span>
+      <img src={logoImage} alt="Logo"  style={{width: "60px", height: "60px"}}/>
     </Link>
     <p className="text-white mt-2">2000 - 2024</p>
   </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { ratings } from '../component/data';
 import './Customer.css';
 import Starrated from '../component/Starrated';
-
+import { MdRadioButtonUnchecked } from "react-icons/md";
 const Customer = () => {
   return (
     <>
@@ -14,7 +14,7 @@ const Customer = () => {
           key={i}
           className="flex-shrink-0"
           >
-            <p className="text-xl font-bold">⭕{item.name}</p>
+            <span className="text-xl font-bold flex"><span><MdRadioButtonUnchecked  className="text-orange-500" size={30}/></span><span>{item.name}</span></span>
             {/* <p className="text-green-500">{item.rating}</p> */}
             <Starrated rating={item.rating}/>
             <p className="italic mt-2 text-sm break-words text-wrap">{item.testimony}</p>
