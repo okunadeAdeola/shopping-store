@@ -9,10 +9,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Mirza:wght@400;500;600;700&display=swap'); */
 
 
-body{
+/* body{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+} */
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
 }
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}
 #background {
     position: relative;
     height: 100%;

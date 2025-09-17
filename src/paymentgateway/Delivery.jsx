@@ -47,7 +47,7 @@ const Delivery = () => {
         <h1 className='text-center font-bold text-2xl'>PickupForm Information</h1>
         <div className='flex lg:gap-10 gap-3 border-gray-500 lg:border-b md:border-b lg:p-3 p-4'>
           <label htmlFor='pickupname' className='font-semibold'>Full Name:</label>
-          <input {...register("pickupname", { required: true })} type="text" className={`border border-black focus:outline-none py-1 rounded h-[35px] p-3 w-[65%] lg:ms-0 md:ms-5 ms-5 lg:w-[75%] ${errors.pickupname ? 'border-red-500' : ''}`} />
+          <input {...register("pickupname", { required: true })} type="text" className={`border border-black focus:outline-none py-1 rounded h-[65px] p-3 w-[65%] lg:ms-0 md:ms-5 ms-5 lg:w-[75%] ${errors.pickupname ? 'border-red-500' : ''}`} />
         </div>
         <small className='text-red-600 ms-[42%] lg:ms-[55%]'>{errors.pickupname && <span>This field is required</span>}</small>
 
@@ -73,8 +73,8 @@ const Delivery = () => {
           </select>
         </div>
         <div className='flex justify-around mt-5'>
-          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-pink-500 rounded hover:bg-gray-200 hover:text-pink-500 text-white p-2' onClick={handlePrevious}>Previous</button>
-          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-pink-500 rounded hover:bg-gray-200 hover:text-pink-500 text-white p-2' type='submit'>Next</button>
+          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-orange-500 rounded hover:bg-gray-200 hover:text-orange-500 text-white p-2' onClick={handlePrevious}>Previous</button>
+          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-orange-500 rounded hover:bg-gray-200 hover:text-orange-500 text-white p-2' type='submit'>Next</button>
         </div>
       </form>
     </div>

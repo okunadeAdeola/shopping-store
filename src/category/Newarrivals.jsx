@@ -39,12 +39,12 @@ const Newarrivals = () => {
     <>
       <h3 className='text-center text-4xl font-bold my-6'>NEW ARRIVALS</h3>
       <div className="">
-        <div className="grid grid-cols-2 sm:grid-cols-4 bg-gray-100 lg:grid-cols-6 xl:grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 bg-amber-50 lg:grid-cols-6 xl:grid-cols-4 gap-4 p-4">
           {newArrival.length === 0 ? (
             <p>No allProducts found</p>
           ) : (
             newArrival.map((product, i) => (
-              <div onClick={() => handleProductClick(product)} key={i} className="bg-white border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300">
+              <div onClick={() => handleProductClick(product)} key={i} className="bg-amber-50 border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {product?.images && product?.images?.front ? (
                   <img 
                     src={product?.images?.front} 

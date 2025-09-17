@@ -38,25 +38,25 @@ const Allproducts = ({ allProducts, setAllProducts }) => {
 
   return (
     <>
-      <h3 className='text-center text-4xl font-bold my-6'>Explore Our Collection</h3>
+      <h3 className='text-center text-4xl font-bold my-6 text-orange-500'>Explore Our Collection</h3>
       {loader ? (
           <div className="flex justify-center items-center ">
         <img
           src={gif}
           alt="Loading..."
-          className="lg:ms-[-100px] border p-3 shadow-xl rounded-xl w-[50px] mt-10"
+          className="lg:ms-[-100px] border border-orange-500 p-3 shadow-xl rounded-xl w-[50px] mt-10"
         />
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-4 bg-gray-100 lg:grid-cols-6 xl:grid-cols-5 gap-4 p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 bg-gray-900 lg:grid-cols-6 xl:grid-cols-5 gap-4 p-4">
           {allProducts.length === 0 ? (
-              <p className='text-center text-lg font-semibold'>No product found</p>
+              <p className='text-center text-lg font-semibold text-orange-500'>No product found</p>
           ) : (
             allProducts.map((product, i) => (
               <div
                 onClick={() => handleClick(product)}
                 key={i}
-                className="bg-white border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300"
+                className="bg-amber-50 border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300"
               >
                 {product?.images && product?.images?.front ? (
                   <div className='w-full h-40 overflow-hidden '>

@@ -22,9 +22,14 @@ const ResetPassword = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
     };
 
-    // Password validation schema
+    // ✅ Get email saved from ForgotPassword step
+    const email = localStorage.getItem("userEmail");
+
+    // ✅ Validation schema
     const validationSchema = yup.object({
-        // email: yup.string().email('Invalid email address').required('Email is required'),
+        otp: yup.string()
+            .required('OTP is required')
+            .matches(/^\d{4,6}$/, 'OTP must be 4-6 digits'),
         password: yup.string()
             .required('Password is required')
             .matches(/(?=.*[a-z])/, 'Must contain at least one lowercase letter')
@@ -38,22 +43,23 @@ const ResetPassword = () => {
 
     const formik = useFormik({
         initialValues: {
-            email: '',
             password: '',
             confirmPassword: '',
+            otp: '',
         },
         validationSchema,
         onSubmit: async (values) => {
             setLoading(true);
             try {
-                const response = await axiosInstance.post('/reset-Password', {
-                    // email: values.email,
-                    otp: values.otp,   
+                const response = await axiosInstance.post('/reset-password', {
+                    email, // from localStorage
+                    otp: values.otp,
                     newPassword: values.password,
                 });
 
-                if (response.data.success) {
+                if (response.data.success || response.data.status) {
                     toast.success('Password reset successful! Redirecting...');
+                    localStorage.removeItem("userEmail"); // cleanup
                     setTimeout(() => navigate('/login'), 3000);
                 } else {
                     toast.error(response.data.message || 'Something went wrong');
@@ -69,12 +75,28 @@ const ResetPassword = () => {
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
                 <div className="text-center mb-6">
-                    <MdOutlineShoppingBag className="mx-auto text-pink-500 bg-gray-100 rounded-full p-3" size={40} />
+                    <MdOutlineShoppingBag className="mx-auto text-orange-500 bg-gray-100 rounded-full p-3" size={40} />
                     <h2 className="text-xl font-semibold mt-2">Reset Password</h2>
                 </div>
 
                 <form onSubmit={formik.handleSubmit}>
-                   
+                    {/* OTP Field */}
+                    <div className="mb-4">
+                        <label className="block text-gray-700 font-medium">OTP</label>
+                        <input
+                            type="text"
+                            name="otp"
+                            className="border border-gray-300 p-2 w-full rounded-md"
+                            placeholder="Enter OTP"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.otp}
+                        />
+                        {formik.touched.otp && formik.errors.otp && (
+                            <p className="text-red-500 text-sm mt-1">{formik.errors.otp}</p>
+                        )}
+                    </div>
+
                     {/* New Password Field */}
                     <div className="mb-4 relative">
                         <label className="block text-gray-700 font-medium">New Password</label>
@@ -124,7 +146,7 @@ const ResetPassword = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full bg-pink-500 text-white py-3 rounded-md hover:bg-pink-600 transition flex items-center justify-center"
+                        className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-orange-600 transition flex items-center justify-center"
                         disabled={loading}
                     >
                         {loading ? <img src={gif} alt="Loading" className="w-5 h-5" /> : 'Reset Password'}

@@ -1,108 +1,88 @@
-import { useState } from "react"
-import { MdOutlineShoppingBag } from "react-icons/md"
-import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import gif from "../assets/image/gif.gif"
-import axiosInstance from "../axiosInstance"
+import React, { useState, useEffect } from "react";
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import gif from "../assets/image/gif.gif";
+import axiosInstance from "../axiosInstance";
 
-const OtpVerification = () => {
-  const [otp, setOtp] = useState("")
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
-  const email = localStorage.getItem("user") // Get stored email
+const Otp = () => {
+  const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const email = localStorage.getItem("userEmail");
+
+  // Redirect if email is missing
+  // useEffect(() => {
+  //   if (!email) {
+  //     toast.error("Session expired. Please start again.", { position: "top-center" });
+  //     navigate("/login");
+  //   }
+  // }, [email, navigate]);
 
   const handleVerifyOtp = async (e) => {
-    e.preventDefault()
-    if (!otp.trim()) {
-      toast.error("Please enter OTP")
-      return
+    e.preventDefault();
+
+    const trimmedOtp = otp.trim();
+
+    if (!/^\d{4,6}$/.test(trimmedOtp)) {
+      toast.error("Please enter a valid OTP", { position: "top-center" });
+      return;
     }
 
-    setLoading(true)
+    setLoading(true);
     try {
-      const response = await axiosInstance.post("/verifyOtp", { email, otp })
-      toast.success(response?.data?.message)
-      localStorage.setItem("isOtpVerified", "true")
-      navigate("/reset-password")
+      const response = await axiosInstance.post("/verifyOtp", { email, otp: trimmedOtp });
+
+      toast.success(response?.data?.message || "OTP verified successfully", {
+        position: "top-center",
+      });
+
+      localStorage.setItem("isOtpVerified", "true");
+
+      navigate("/reset-password");
     } catch (error) {
-      toast.error(error?.response?.data?.message || "Invalid OTP")
+      toast.error(error?.response?.data?.message || "Invalid OTP. Try again.", {
+        position: "top-center",
+      });
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    // <div id='background' className="form-membership min-h-screen flex items-center justify-center py-10">
-    //   <h2>Enter OTP</h2>
-    //   <form onSubmit={handleVerifyOtp}>
-    //     <input
-    //       type="text"
-    //       maxLength="6"
-    //       placeholder="Enter OTP"
-    //       value={otp}
-    //       onChange={(e) => setOtp(e.target.value)}
-    //       required
-    //     />
-    //     <button type="submit">Verify OTP</button>
-    //   </form>
-    // </div>
-    // <div id='background' className="form-membership min-h-screen flex items-center justify-center py-10">
-    //         <div className="preloader absolute inset-0 flex items-center justify-center">
-    //           <div className="preloader-icon animate-spin"></div>
-    //         </div>
-    //         <div className="content bg-white mx-10 p-8 rounded-lg shadow-md w-full max-w-sm">
-    //           <div id="logo" className="mb-6 text-center">
-    //             <MdOutlineShoppingBag className='mx-auto text-center bg-pink-500 rounded-full p-3' size={30} />
-    //           </div>
-    //           <h5 className="text-center mb-6">Forgotten Password</h5>
-    //           <form onSubmit={formik.handleSubmit}>
-    //             <div className="h-[50px] mb-5">
-    //               <input
-    //                 type="email"
-    //                 className={`h-[50px] w-full p-3 border rounded-md focus:outline-none focus:ring-2 
-    //                   ${formik.touched.email && formik.errors.email ? 'border-red-500' : 'border-gray-300'}`}
-    //                 placeholder="Email"
-    //                 name="email"
-    //                 onBlur={formik.handleBlur}
-    //                 onChange={formik.handleChange}
-    //               />
-    //               {formik.touched.email && formik.errors.email && (
-    //                 <span className='text-red-500 text-[12px]'>{formik.errors.email}</span>
-    //               )}
-    //             </div>
-    //             <button type='submit' className="btn btn-block w-full bg-pink-500 text-white py-3 rounded-md hover:bg-gray-200 hover:text-pink-500">
-    //               {loading ? <img src={gif} alt="Loading..." className='w-[25px] text-center mx-auto' /> : 'Continue'}
-    //             </button>
-    //           </form>
-    //         </div>
-    //       </div>
-    <div id="background" className="form-membership min-h-screen flex items-center justify-center py-10">
-      <div className="preloader absolute inset-0 flex items-center justify-center">
-        <div className="preloader-icon animate-spin"></div>
-      </div>
-      <div className="content bg-white mx-10 p-8 rounded-lg shadow-md w-full max-w-sm">
-        <div id="logo" className="mb-6 text-center">
-          <MdOutlineShoppingBag className="mx-auto text-center bg-pink-500 rounded-full p-3" size={30} />
+    <div className="min-h-screen flex items-center justify-center py-10">
+      <div className="bg-white mx-10 p-8 rounded-lg shadow-md w-full max-w-sm">
+        <div className="mb-6 text-center">
+          <MdOutlineShoppingBag
+            className="mx-auto bg-orange-500 text-white rounded-full p-3"
+            size={40}
+          />
         </div>
-        <h5 className="text-center mb-6">OTP Verification</h5>
+        <h2 className="text-center text-xl font-semibold mb-6">OTP Verification</h2>
         <form onSubmit={handleVerifyOtp}>
           <div className="h-[50px] mb-5">
             <input
               type="text"
-              className="h-[50px] w-full p-3 border rounded-md focus:outline-none focus:ring-2 border-gray-300"
-              placeholder="Enter OTP"
               maxLength={6}
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
+              className="h-[50px] w-full p-3 border rounded-md focus:outline-none border-gray-300 focus:ring-2 focus:ring-pink-400"
+              placeholder="Enter the 4-6 digit OTP"
               required
             />
           </div>
           <button
             type="submit"
-            className="btn btn-block w-full bg-pink-500 text-white py-3 rounded-md hover:bg-gray-200 hover:text-pink-500"
+            disabled={loading}
+            className={`w-full py-3 rounded-md transition ${
+              loading
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-orange-500 text-white hover:bg-gray-200 hover:text-orange-500"
+            }`}
           >
             {loading ? (
-              <img src={gif || "/placeholder.svg"} alt="Loading..." className="w-[25px] text-center mx-auto" />
+              <img src={gif} alt="Loading..." className="w-[25px] mx-auto" />
             ) : (
               "Verify OTP"
             )}
@@ -113,4 +93,4 @@ const OtpVerification = () => {
   );
 };
 
-export default OtpVerification;
+export default Otp;

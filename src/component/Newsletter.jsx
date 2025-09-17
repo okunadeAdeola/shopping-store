@@ -54,7 +54,7 @@ const Newsletter = () => {
                     </div>
                     <button
                         onClick={() => handleNews()}
-                        className='w-full lg:max-w-sm hover:bg-pink-600 hover:text-gray-100 bg-gray-100 text-gray-900 py-2 rounded-md text-sm'>
+                        className='w-full lg:max-w-sm hover:bg-orange-600 hover:text-gray-100 bg-gray-100 text-gray-900 py-2 rounded-md text-sm'>
                         SUBSCRIBE TO NEWSLETTER
                     </button>
                 </div>

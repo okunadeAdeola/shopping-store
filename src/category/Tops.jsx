@@ -40,7 +40,7 @@ const Tops = () => {
 
     return (
         <>
-            <h3 className='text-center text-4xl my-3 font-bold'>SPONSORED PRODUCTS</h3>
+            <h3 className='text-center text-4xl my-3 font-bold text-orange-500'>SPONSORED PRODUCTS</h3>
             {loader ? (
                 <div className="flex text-center justify-center items-center ">
                     <img
@@ -50,17 +50,17 @@ const Tops = () => {
                     />
                 </div>
             ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-4 bg-gray-100 lg:grid-cols-6 xl:grid-cols-4 gap-4 p-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 bg-gray-900 lg:grid-cols-6 xl:grid-cols-4 gap-4 p-4">
                     {topData.length === 0 ? (
                         <p className='text-center text-lg font-semibold'>No product found</p>
                     ) : (
                         topData.map((product, i) => (
-                            <div onClick={() => handleProductClick(product)} key={i} className="bg-white border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300">
+                            <div onClick={() => handleProductClick(product)} key={i} className="bg-white border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                                 {product?.images && product?.images?.front ? (
                                     <img
                                         src={product?.images?.front}
                                         alt={product?.name}
-                                        className="w-full h-40 object-cover hover:transform hover:scale-110 transition duration-300 ease-in-out"
+                                        className="w-full h-40 object-cover hover:transform hover:scale-105 transition duration-300 ease-in-out overflow-hidden"
                                     />
                                 ) : (
                                     <p className="text-red-500">Image not available</p>

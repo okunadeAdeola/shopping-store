@@ -32,19 +32,19 @@ const Wears = () => {
 
     return (
         <>
-      <h3 className='text-center text-4xl font-bold my-3'>Fashion</h3>
+      <h3 className='text-center text-4xl font-bold text-orange-500'>Fashion</h3>
       {loader ? (
      <div className="flex text-center justify-center items-center ">
      <img
        src={gif}
        alt="Loading..."
-       className="lg:ms-[-100px] border p-3 shadow-xl rounded-xl w-[50px] mt-10"
+       className="lg:ms-[-100px] border border-orange-500 p-3 shadow-xl rounded-xl w-[50px] mt-10"
      />
         </div>
       ) : (
-    <div className='p-6 bg-gray-100'>
+    <div className='p-6 bg-gray-900'>
       {categoryWears?.length === 0 ? (
-        <p className='text-center text-lg font-semibold'>No product found</p>
+        <p className='text-center text-lg font-semibold text-orange-500'>No product found</p>
       ) : (
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {categoryWears.map((item, index) => (

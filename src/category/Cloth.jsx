@@ -60,7 +60,7 @@ const Cloth = () => {
             <p className='text-center text-lg font-semibold'>No product found</p>
           ) : (
             clothCategory.map((product, i) => (
-              <div onClick={() => handleProductClick(product)} key={i} className="bg-white border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300">
+              <div onClick={() => handleProductClick(product)} key={i} className="bg-amber-50 border cursor-pointer border-gray-200 rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {product?.images && product?.images?.front ? (
                   <img
                     src={product?.images?.front}

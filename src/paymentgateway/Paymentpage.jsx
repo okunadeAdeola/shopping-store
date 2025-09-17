@@ -7,7 +7,7 @@ import { FaSquareCheck } from "react-icons/fa6";
 import { handleNextStep } from '../Redux/counterSlice';
 import Paymentgateway from './Paymentgateway';
 import Thank from './Thank';
-
+import Navbar from '../component/Navbar';
 
 const Paymentpage = () => {
     const storeIndex = useSelector((state => state.counterReducer.address.currentStep))
@@ -17,7 +17,6 @@ const Paymentpage = () => {
 
     useEffect(() => {
       return () => {
-        // Dispatch an action to reset currentStep to 0 when component unmounts
         dispatch(handleNextStep({ currentStep: -1 }));
       };
     }, [dispatch]);
@@ -42,9 +41,9 @@ const Paymentpage = () => {
     ]
 
     return (
-        <section className='bg-gray-300 w-full p-5'>
+      <section className='bg-amber-50 w-full p-5'>
+      <Navbar />  
         <div className='lg:ms-[22%] justify-between lg:me-[15%] flex lg:flex-row flex-col gap-8'>
-          {/* <div></div> */}
             <div className='stepContainer w-[70%]'>
                 {storeIndex === 0 && <Address />}
                 {storeIndex === 1 && <Delivery />}
@@ -56,7 +55,7 @@ const Paymentpage = () => {
                     list.map((items, index) => (
                         <ul key={index} className='flex justify-between border-b border-gray-500 p-5'>
                             <li className='font-semibold'>{items.name}</li>
-                            <li className={storeIndex > index ? 'mt-2 text-pink-500' : 'mt-2'}>{storeIndex > index ? items.icon2 : items.icon}</li>
+                            <li className={storeIndex > index ? 'mt-2 text-bg-orange-500-500' : 'mt-2'}>{storeIndex > index ? items.icon2 : items.icon}</li>
                         </ul>
                     ))
                 }

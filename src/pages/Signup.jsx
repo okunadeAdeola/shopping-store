@@ -61,9 +61,9 @@ const Signup = () => {
     <div id='background' className="form-membership min-h-screen flex items-center justify-center py-10">
       <div className="preloader absolute inset-0 flex items-center justify-center">
       </div>
-      <div className="content bg-white mx-10 p-8 rounded-lg shadow-md w-full max-w-sm">
+      <div className="content bg-amber-50 mx-10 p-8 rounded-lg shadow-md w-full max-w-sm">
         <div id="logo" className="mb-6 text-center">
-          <MdOutlineShoppingBag className='mx-auto text-center bg-pink-500 rounded-full p-3' size={30} />
+          <MdOutlineShoppingBag className='mx-auto text-center bg-orange-500 rounded-full p-3' size={30} />
         </div>
         <h5 className="text-center mb-6">Create account</h5>
         <form onSubmit={formik.handleSubmit}>
@@ -106,7 +106,7 @@ const Signup = () => {
                             {!passwordVisible ? <FaRegEye /> : <FaEyeSlash />}
                         </span>
                     </div>
-          <button type='submit'  className="btn btn-block w-full bg-pink-500 text-white py-3 rounded-md hover:bg-gray-200 hover:text-pink-500">
+          <button type='submit'  className="btn btn-block w-full bg-orange-500 text-white py-3 rounded-md hover:bg-gray-200 hover:text-orange-500">
           {loading? <img src={gif} alt="" className='w-[25px] text-center mx-auto' /> : 'Sign Up'}
              </button>
           <hr className="my-6" />

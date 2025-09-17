@@ -17,51 +17,51 @@ const Footer = () => {
         <div>
           <div className="flex items-center mt-[-2px]">
             <Link to="/">
-              <span className="text-2xl hover:text-pink-600 font-bold text-white mr-2">shopping</span>
-              <span className="text-xl hover:text-pink-600 font-semibold text-pink-600">.co</span>
+              <span className="text-2xl hover:text-orange-600 cursor-pointer font-bold text-white mr-2">shopping</span>
+              <span className="text-xl hover:text-orange-600 cursor-pointer font-semibold text-orange-600">.co</span>
             </Link>
           </div>
-          <p className='my-3 hover:text-pink-600'>We offer stylish clothes that you’ll love to wear, tailored for both women and men."</p>
+          <p className='my-3 hover:text-orange-600 cursor-pointer'>We offer stylish clothes that you’ll love to wear, tailored for both women and men."</p>
           <ul className='flex gap-5'>
-            <li className="hover:text-pink-600"><FaFacebook /></li>
-            <li className="hover:text-pink-600"><FaSquareInstagram /></li>
-            <li className="hover:text-pink-600"><FaSquareTwitter /></li>
-            <li className="hover:text-pink-600"><IoLogoYoutube /></li>
+            <li className="hover:text-orange-600 cursor-pointer"><FaFacebook /></li>
+            <li className="hover:text-orange-600 cursor-pointer"><FaSquareInstagram /></li>
+            <li className="hover:text-orange-600 cursor-pointer"><FaSquareTwitter /></li>
+            <li className="hover:text-orange-600 cursor-pointer"><IoLogoYoutube /></li>
           </ul>
         </div>
         <div>
-          <h3 className='font-bold mb-2 hover:text-pink-600'>Customer Service</h3>
+          <h3 className='font-bold mb-2 hover:text-orange-600 cursor-pointer'>Customer Service</h3>
           <ul>
-            <li className="hover:text-pink-600">Help Center</li>
-            <li className="hover:text-pink-600">Track Order</li>
-            <li className="hover:text-pink-600">Returns</li>
-            <li className="hover:text-pink-600">Shipping Info</li>
+            <li className="hover:text-orange-600 cursor-pointer">Help Center</li>
+            <li className="hover:text-orange-600 cursor-pointer">Track Order</li>
+            <li className="hover:text-orange-600 cursor-pointer">Returns</li>
+            <li className="hover:text-orange-600 cursor-pointer">Shipping Info</li>
           </ul>
         </div>
         <div>
-          <h3 className='font-bold mb-2 hover:text-pink-600'>About Us</h3>
+          <h3 className='font-bold mb-2 hover:text-orange-600 cursor-pointer'>About Us</h3>
           <ul>
-            <li className="hover:text-pink-600">Our Story</li>
-            <li className="hover:text-pink-600">Careers</li>
-            <li className="hover:text-pink-600">Press</li>
-            <li className="hover:text-pink-600">Blog</li>
+            <li className="hover:text-orange-600 cursor-pointer">Our Story</li>
+            <li className="hover:text-orange-600 cursor-pointer">Careers</li>
+            <li className="hover:text-orange-600 cursor-pointer">Press</li>
+            <li className="hover:text-orange-600 cursor-pointer">Blog</li>
           </ul>
         </div>
         <div>
-          <h3 className='font-bold mb-2 hover:text-pink-600'>Categories</h3>
+          <h3 className='font-bold mb-2 hover:text-orange-600 cursor-pointer'>Categories</h3>
           <ul>
-            <li className="hover:text-pink-600">Men</li>
-            <li className="hover:text-pink-600">Women</li>
-            <li className="hover:text-pink-600">Electronics</li>
-            <li className="hover:text-pink-600">Accessories</li>
+            <li className="hover:text-orange-600 cursor-pointer ">Men</li>
+            <li className="hover:text-orange-600 cursor-pointer">Women</li>
+            <li className="hover:text-orange-600 cursor-pointer ">Electronics</li>
+            <li className="hover:text-orange-600 cursor-pointer ">Accessories</li>
           </ul>
         </div>
         <div>
-          <h3 className='font-bold mb-2 hover:text-pink-600'>Contact</h3>
+          <h3 className='font-bold mb-2 hover:text-orange-600 cursor-pointer'>Contact</h3>
           <ul>
-            <li className="hover:text-pink-600">Email: support@example.com</li>
-            <li className="hover:text-pink-600">Phone: +123 456 7890</li>
-            <li className="hover:text-pink-600">Address: 123 Main St, City</li>
+            <li className="hover:text-orange-600 cursor-pointer">Email: support@example.com</li>
+            <li className="hover:text-orange-600 cursor-pointer ">Phone: +123 456 7890</li>
+            <li className="hover:text-orange-600 cursor-pointer">Address: 123 Main St, City</li>
           </ul>
         </div>
       </div>
@@ -71,7 +71,7 @@ const Footer = () => {
   <div className="flex items-center gap-5">
     <Link to="/">
       <span className="text-2xl font-bold text-white mr-2">shopping</span>
-      <span className="text-xl font-semibold text-pink-600">.co</span>
+      <span className="text-xl font-semibold text-orange-600">.co</span>
     </Link>
     <p className="text-white mt-2">2000 - 2024</p>
   </div>

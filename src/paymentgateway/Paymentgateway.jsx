@@ -116,8 +116,8 @@ const onSubmit = (data) => {
 
 
         <div className='flex justify-around my-5'>
-          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-pink-500 rounded hover:bg-gray-200 hover:text-pink-500 text-white p-2' onClick={handlePrevious}>Previous</button>
-          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-pink-500 rounded hover:bg-gray-200 hover:text-pink-500 text-white p-2' type='submit'>Next</button>
+          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-orange-500 rounded hover:bg-gray-200 hover:text-orange-500 text-white p-2' onClick={handlePrevious}>Previous</button>
+          <button className='lg:w-[30%] md:w-[100%] w-[100%] bg-orange-500 rounded hover:bg-gray-200 hover:text-orange-500 text-white p-2' type='submit'>Next</button>
         </div>
     </form >
     </div >

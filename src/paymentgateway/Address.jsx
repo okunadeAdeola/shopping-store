@@ -98,7 +98,7 @@ const Address = () => {
           <Countryaddress setLocation={setLocation} />
         </div>
 
-        <button className='lg:w-[100%] md:w-[100%] w-[100%] bg-pink-500 rounded hover:bg-gray-200 hover:text-pink-500 text-white p-2' type='submit'>Continue to Payment</button>
+        <button className='lg:w-[100%] md:w-[100%] w-[100%] bg-orange-500 rounded hover:bg-gray-200 hover:text-orange-500 text-white p-2' type='submit'>Continue to Payment</button>
       </form>
     </div>
   )
