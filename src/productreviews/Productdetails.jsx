@@ -39,7 +39,7 @@ const savedProductdetails = ({ savedProduct }) => {
       </div>
 
       <div className="mt-6">
-        <button className="bg-blue-500 text-white py-2 px-4 rounded-lg mr-4">Add to Cart</button>
+        <button className="bg-orange-500 text-white py-2 px-4 rounded-lg mr-4 hover:bg-orange-700">Add to Cart</button>
         <button className="bg-green-500 text-white py-2 px-4 rounded-lg">Buy Now</button>
       </div>
     </div>

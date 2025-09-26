@@ -8,16 +8,6 @@ const Homepage = () => {
   const [quality, setQuality] = useState(1);
   const [customer, setCustomer] = useState(1);
 
-  // useEffect(() => {
-  //     Aos.init({
-  //       duration:3000,
-  //       once:false,
-  //       offset: 100,
-  //       easing: 'ease-in-out',
-  //       infinite: true,
-  //     //   Aos.refresh();
-  //     })
-  //   }, [count, quality, customer])
   const brandTarget = 200;
   const qualityTarget = 2000;
   const customerTarget = 3000;
@@ -60,13 +50,13 @@ const Homepage = () => {
   return (
     <div className="grid lg:grid-cols-2 bg-amber-50 p-10">
       <div className="flex flex-col justify-center">
-        <p className="lg:text-6xl md:text-6xl text-4xl font-bold text-stone-800">
+        <p className="lg:text-5xl md:text-6xl text-4xl font-bold text-stone-800">
           Shop Smarter, Live Better
         </p>
-        <p className="lg:text-6xl font-bold md:text-6xl text-4xl text-stone-800">
+        <p className="lg:text-5xl font-bold md:text-6xl text-4xl text-stone-800">
           with the Perfect
         </p>
-        <p className="lg:text-6xl font-bold md:text-6xl text-4xl text-stone-800">
+        <p className="lg:text-5xl font-bold md:text-6xl text-4xl text-stone-800">
           Outfit
         </p>
         <p className="my-3 text-stone-700 lg:text-2xl md:text-2xl text-2xl">

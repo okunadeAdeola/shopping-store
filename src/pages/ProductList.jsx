@@ -149,7 +149,7 @@ const ProductList = () => {
                 
               </div>
             ) : (
-              <button onClick={handleAddToCart} className='bg-orange-500 w-full text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-gray-400 transition'>
+              <button onClick={handleAddToCart} className='bg-orange-500 w-full text-white px-6 py-2 rounded-lg text-lg font-semibold hover:bg-orange-600 transition'>
                 Add to Cart
               </button>
             )}

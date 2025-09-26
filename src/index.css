@@ -13,10 +13,10 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
 } */
 body {
-  font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-family: "DM Sans", sans-serif !important;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "DM Sans", sans-serif !important;
 }
 #background {
     position: relative;
