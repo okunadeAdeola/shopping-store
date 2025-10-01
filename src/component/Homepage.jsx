@@ -50,7 +50,7 @@ const Homepage = () => {
   return (
     <div className="grid lg:grid-cols-2 bg-amber-50 p-10">
       <div className="flex flex-col justify-center">
-        <p className="lg:text-5xl md:text-6xl text-4xl font-bold text-stone-800">
+        <p className="lg:text-5xl md:text-5xl text-3xl font-bold text-stone-800">
           Shop Smarter, Live Better
         </p>
         <p className="lg:text-5xl font-bold md:text-6xl text-4xl text-stone-800">
@@ -70,7 +70,7 @@ const Homepage = () => {
           >
             Shop Now
           </Link>
-          <div className="flex lg:gap-10 md:gap-10 my-5 flex-wrap">
+          <div className="flex lg:gap-10 md:gap-10 my-5 gap-3 flex-wrap">
             <div>
               <p className="lg:text-5xl md:text-6xl text-2xl font-bold text-orange-500">
                 {count.toLocaleString()} +
