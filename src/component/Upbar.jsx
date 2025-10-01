@@ -48,7 +48,7 @@ const Upbar = ({openToggle, allProducts}) => {
   }
   
   return (
-    <div className='fixed w-full ms-[-16px] md:ms-[-28px] lg:ms-0 top-0 lg:hidden text-white bg-pink-600 p-5 rounded z-0'>
+    <div className='fixed w-full ms-[-16px] md:ms-[-28px] lg:ms-0 top-0 lg:hidden text-white bg-orange-500 p-5 rounded z-0'>
       <section className='mx-1'>
         <div className='grid grid-cols-2 gap-10 text-center items-center'>
           <Link to="/" className='font-semibold'>Shop</Link>
@@ -89,7 +89,7 @@ const Upbar = ({openToggle, allProducts}) => {
 
           <div onClick={handleCartRoute} className="flex gap-7 cursor-pointer items-center me-5 relative">
             <FaCartShopping className="mt-5" size={20} />
-            <span className="absolute top-5 left-3 bg-pink-600 rounded-full text-[8px] text-white w-4 h-4 flex items-center justify-center">
+            <span className="absolute top-5 left-3 bg-orange-500 rounded-full text-[8px] text-white w-4 h-4 flex items-center justify-center">
               {totalProduct}
             </span>
             <Link
